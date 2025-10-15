@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - CinemachineTarget
+  - Faster
+  - Slower
+  - Start
+  - Stop
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - Environment
   - Player Graphics
   - Test
-  - 
+  - NoPlayerCollide
   - 
   - 
   - 

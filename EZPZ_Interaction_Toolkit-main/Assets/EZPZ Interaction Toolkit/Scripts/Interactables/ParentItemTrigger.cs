@@ -28,6 +28,11 @@ public class ParentItemTrigger : InteractableTrigger
     {
         if(newParent == null)
             newParent = transform;
+
+        if(newParent.localScale != Vector3.one)
+        {
+            Debug.LogError("--WARNING:" + name + " : newParent local scale is not set to ( 1, 1, 1). You might introduce unstable behaviour.");
+        }
     }
 
     public void ParentSubject()
@@ -104,7 +109,7 @@ public class ParentItemTrigger : InteractableTrigger
 
                 foreach(ParentTracker pt in originalParents)
                 {
-                    if(pt.subject == subject)
+                    if(pt.subject == other.gameObject)
                     {   
                         found = pt;
                     }
