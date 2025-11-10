@@ -9,6 +9,7 @@ TagManager:
   - Slower
   - Start
   - Stop
+  - Step
   layers:
   - Default
   - TransparentFX

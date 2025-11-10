@@ -5,11 +5,12 @@ public class ConsoleBoard : MonoBehaviour
 {
     public FerrisWheel m_well;
     public TextMeshPro m_speedText;
+    public AudioSource m_audio;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class ConsoleBoard : MonoBehaviour
                 {
                     case "Start":
                         m_well.OnStartClick();
+                        m_audio.Play();
                         break;
                     case "Faster":
                         m_well.OnFasterClick();
@@ -33,6 +35,7 @@ public class ConsoleBoard : MonoBehaviour
                         break;
                     case "Stop":
                         m_well.OnStopClick();
+                        m_audio.Stop();
                         break;
                     default:
                         break;

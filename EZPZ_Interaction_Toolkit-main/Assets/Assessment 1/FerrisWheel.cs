@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FerrisWheel : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 1;
     public int level = 0;
     public bool started;
 
@@ -12,12 +12,11 @@ public class FerrisWheel : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (started)
         {
-            var real = speed * level;
+            var real = speed + level*0.5f;
             transform.Rotate(Vector3.up, real * Time.deltaTime);
         }
     }
@@ -41,10 +40,19 @@ public class FerrisWheel : MonoBehaviour
     public void OnStartClick()
     {
         started = true;
+        var cols = gameObject.GetComponentsInChildren<House>();
+        foreach (House house in cols) {
+            house.LighingOn();
+        }
     }
 
     internal void OnStopClick()
     {
         started = false;
+        var cols = gameObject.GetComponentsInChildren<House>();
+        foreach (House house in cols)
+        {
+            house.LighingOff();
+        }
     }
 }
