@@ -6,7 +6,7 @@ public class ConsoleBoard : MonoBehaviour
     public FerrisWheel m_well;
     public TextMeshPro m_speedText;
     public AudioSource m_audio;
-
+    public PlayerController m_playerController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +25,7 @@ public class ConsoleBoard : MonoBehaviour
                 {
                     case "Start":
                         m_well.OnStartClick();
+                        m_playerController.StartNavation();
                         m_audio.Play();
                         break;
                     case "Faster":

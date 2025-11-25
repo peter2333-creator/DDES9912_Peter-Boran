@@ -4,6 +4,7 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
     Light mLight;
+    public Transform ground;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
